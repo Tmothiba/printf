@@ -21,8 +21,14 @@ int print_unsigned(va_list types, char buffer[],
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 		buffer[a--] = '0';
 
+=======
+	{
+		buffer[a--] = '0';
+	}
+>>>>>>> printf
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
@@ -47,8 +53,12 @@ int print_unsigned(va_list types, char buffer[],
  * Return: number of chars printed
  */
 
+<<<<<<< HEAD
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
+=======
+int print_octal(va_list types, char buffer[], int flags, int width, int precision, int size)
+>>>>>>> printf
 {
 	int a = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
@@ -59,8 +69,14 @@ int print_octal(va_list types, char buffer[],
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 		buffer[a--] = '0';
 
+=======
+	{
+		buffer[a--] = '0';
+	}
+>>>>>>> printf
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
@@ -91,8 +107,12 @@ int print_octal(va_list types, char buffer[],
 int print_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
+<<<<<<< HEAD
 	return (print_hexa(types, "0123456789abcdef", buffer,
 		flags, 'x', width, precision, size));
+=======
+	return (print_hexa(types, "0123456789abcdef", buffer, flags, 'x', width, precision, size));
+>>>>>>> printf
 }
 
 /************* print unsigned number in upper hexadecimal **************/
@@ -107,11 +127,17 @@ int print_hexadecimal(va_list types, char buffer[],
  * Return: number of chars printed
  */
 
+<<<<<<< HEAD
 int print_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	return (print_hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
+=======
+int print_hexa_upper(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+	return (print_hexa(types, "0123456789ABCDEF", buffer, flags, 'X', width, precision, size));
+>>>>>>> printf
 }
 
 /************** print hexx number in lower or upper **************/
@@ -129,8 +155,12 @@ int print_hexa_upper(va_list types, char buffer[],
  * Return: number of chars printed
  */
 
+<<<<<<< HEAD
 int print_hexa(va_list types, char map_to[], char buffer[],
 	int flags, char flag_ch, int width, int precision, int size)
+=======
+int print_hexa(va_list types, char map_to[], char buffer[], int flags, char flag_ch, int width, int precision, int size)
+>>>>>>> printf
 {
 	int a = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
@@ -141,8 +171,14 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	num = convert_size_unsgnd(num, size);
 
 	if (num == 0)
+<<<<<<< HEAD
 		buffer[a--] = '0';
 
+=======
+	{
+		buffer[a--] = '0';
+	}
+>>>>>>> printf
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)

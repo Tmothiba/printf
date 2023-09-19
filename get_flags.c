@@ -9,8 +9,11 @@
 
 int get_flags(const char *format, int *i)
 {
+<<<<<<< HEAD
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
+=======
+>>>>>>> printf
 	int a, curr_i;
 	int flags = 0;
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
@@ -21,7 +24,11 @@ int get_flags(const char *format, int *i)
 		for (a = 0; FLAGS_CH[a] != '\0'; a++)
 			if (format[curr_i] == FLAGS_CH[a])
 			{
+<<<<<<< HEAD
 				flags |= FLAGS_ARR[a];
+=======
+				flags = FLAGS_ARR[a];
+>>>>>>> printf
 				break;
 			}
 		if (FLAGS_CH[a] == 0)
