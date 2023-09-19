@@ -1,24 +1,17 @@
 #include "main.h"
-
-
-
 /**
-
- * _printf - Printf function
-
+ * _printf - function that prints formats
  * @format: format.
-
  * Return: Printed chars.
-
  */
+void print_buffer(char buffer[], int *buff_ind);
 
 int _printf(const char *format, ...)
-
 {
 
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
-        va_list list;
+        va_list args;
 	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
@@ -27,7 +20,7 @@ int _printf(const char *format, ...)
 
 	}
 
-	va_start(list, format);
+	va_start(args, format);
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -43,13 +36,12 @@ int _printf(const char *format, ...)
 		{
 		print_buffer(buffer, &buff_ind);
 		flags = get_flags(format, &i);
-		width = get_width(format, &i, list);
-		precision = get_precision(format, &i, list);
+		width = get_width(format, &i, args);
+		precision = get_precision(format, &i, args);
 		size = get_size(format, &i);
-
 		++i;
 
-		printed = handle_print(format, &i, list, buffer, flags, width, precision, size);
+		printed = handle_print(format, &i, args, buffer, flags, width, precision, size);
 
 		if (printed == -1)
 		{
@@ -59,7 +51,7 @@ int _printf(const char *format, ...)
 		}
 	}
 	print_buffer(buffer, &buff_ind);
-	va_end(list);
+	va_end(args);
 	return (printed_chars);
 }
 
