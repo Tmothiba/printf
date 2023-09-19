@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
@@ -119,3 +120,11 @@ long int convert_size_unsgnd(unsigned long int num, int size);
 
 #endif /* MAIN_H */
 
+=======
+#ifndef PRINTF_H
+#define PRINTF_H
+
+int _printf(const char *format, ...);
+void print_buffer(char buffer[], int *buff_ind);
+#endif
+>>>>>>> 11c14e073836213ad97b2cfeeb311e75251e9b24
