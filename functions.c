@@ -12,7 +12,6 @@
  * @size: size specifier
  * Return: number of chars printed
  */
-
 int print_char(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	char c = va_arg(types, int);
@@ -112,7 +111,6 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
  * @size: size specifier
  * Return: number of chars printed
  */
-
 int print_int(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	int a = BUFF_SIZE - 2, is_negative = 0;
@@ -140,7 +138,6 @@ int print_int(va_list types, char buffer[], int flags, int width, int precision,
 		num /= 10;
 	}
 	a++;
-
 	return (write_number(is_negative, a, buffer, flags, width, precision, size));
 }
 

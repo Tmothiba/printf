@@ -46,8 +46,7 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 		extra_c = ' ', length++;
 
 	ind++;
-	return (write_pointer(buffer, ind, length,
-		width, flags, padd, extra_c, padd_start));
+	return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_start));
 }
 
 /************************* print non printable *************************/
