@@ -15,7 +15,8 @@
 
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
-{ /* char is stored at left and paddind at buffer's right */
+{ 
+	/* char is stored at left and paddind at buffer's right */
 	int a = 0;
 	char padd = ' ';
 
@@ -180,7 +181,7 @@ int write_unsgnd(int is_negative, int ind,
 
 	if (width > length)
 	{
-		for (i = 0; a < width - length; a++)
+		for (a = 0; a < width - length; a++)
 			buffer[a] = padd;
 
 		buffer[a] = '\0';
