@@ -12,7 +12,8 @@
  * Return: number of chars printed
  */
 
-int print_pointer(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_pointer(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
@@ -46,7 +47,8 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 		extra_c = ' ', length++;
 
 	ind++;
-	return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_start));
+	return (write_pointer(buffer, ind, length, width,
+	flags, padd, extra_c, padd_start));
 }
 
 /************************* print non printable *************************/
@@ -61,7 +63,8 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
  * Return: number of chars printed
  */
 
-int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_non_printable(va_list types, char buffer[], int flags,
+	int width, int precision, int size)
 {
 	int a = 0, offset = 0;
 	char *str = va_arg(types, char *);
@@ -78,7 +81,7 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
 	while (str[a] != '\0')
 	{
 		if (is_printable(str[a]))
-		{		
+		{
 			buffer[a + offset] = str[a];
 		}
 		else
@@ -103,7 +106,8 @@ int print_non_printable(va_list types, char buffer[], int flags, int width, int 
  * Return: numbers of chars printed
  */
 
-int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_reverse(va_list types, char buffer[], int flags,
+	int width, int precision, int size)
 {
 	char *str;
 	int a, count = 0;
@@ -146,7 +150,8 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
  * Return: numbers of chars printed
  */
 
-int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_rot13string(va_list types, char buffer[], int flags,
+	int width, int precision, int size)
 {
 	char z,  *str;
 	unsigned int a, b;
