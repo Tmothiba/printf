@@ -15,7 +15,7 @@ int get_precision(const char *format, int *i, va_list list)
 		return (precision);
 	}
 	precision = 0;
-	for (cur = 1; fromat[cur] != '\0'; cur++)
+	for (cur = 1; format[cur] != '\0'; cur++)
 	{
 		if (is_digit(format[cur]))
 		{
